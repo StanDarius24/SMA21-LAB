@@ -1,95 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.model.MainActivity">
 
+
     <TextView
         android:id="@+id/tStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Payments found:"/>
 
-    <TextView
-        android:layout_width="69dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="64dp"
-        android:layout_weight="0.15"
-        android:text="Expenses:"
-        app:layout_constraintBottom_toTopOf="@+id/bUpdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tStatus"
-        app:layout_constraintVertical_bias="0.071" />
+    <ListView
+        android:id="@+id/listPayments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lBottom"
+        android:layout_below="@+id/tStatus"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="4dp"/>
 
-    <TextView
-        android:layout_width="69dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="64dp"
-        android:layout_weight="0.15"
-        android:text="Income:"
-        app:layout_constraintBottom_toTopOf="@+id/bUpdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tStatus"
-        app:layout_constraintVertical_bias="0.035" />
+    <LinearLayout
+        android:id="@+id/lBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/bUpdate"
-        android:layout_width="363dp"
-        android:layout_height="64dp"
-        android:text="Update"
-        android:onClick="clicked"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tStatus"
-        app:layout_constraintVertical_bias="0.18" />
+        <Button
+            android:id="@+id/bPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="&#8592; Previous"/>
 
-    <EditText
-        android:id="@+id/eExpenses"
-        android:layout_width="64dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="40dp"
-        android:layout_weight="0.35"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/bUpdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tStatus"
-        app:layout_constraintVertical_bias="0.133" />
+        <Button
+            android:id="@+id/bNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next &#8594;"/>
 
-    <EditText
-        android:id="@+id/eIncome"
-        android:layout_width="64dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="40dp"
-        android:layout_weight="0.35"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/bUpdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.305"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tStatus"
-        app:layout_constraintVertical_bias="0.133" />
+    </LinearLayout>
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="334dp"
-        android:layout_height="83dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bUpdate" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lBottom"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        app:backgroundTint="@color/purple_700"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
