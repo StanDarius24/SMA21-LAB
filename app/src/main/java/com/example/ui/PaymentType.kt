@@ -1,12 +1,13 @@
 package com.example.ui
 
 import android.graphics.Color
+import java.util.*
 
 class PaymentType() {
     companion object {
         fun getColorFromPaymentType(type: String): Int {
             var type = type
-            type = type.toLowerCase()
+            type = type.lowercase(Locale.getDefault())
             return if (type == "entertainment") Color.rgb(
                 200,
                 50,
