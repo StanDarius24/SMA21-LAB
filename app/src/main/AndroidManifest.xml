@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartWallet">
         <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.SignUp"
             android:exported="false" />
         <activity
